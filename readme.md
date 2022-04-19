@@ -7,7 +7,7 @@ Contents
 |----------|---------|
 | character-counter | sync mutex |
 | context-switch | bespoke benchmark |
-| recover | how to panic |
-
+| recover | how (not) to panic |
+| cond | conditional wait `sync.Cond` |
 
 
