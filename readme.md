@@ -38,6 +38,17 @@ Because of poor memory synchronization, one or more processes can hold on the sh
 
 Broadining the critical section would allow a gorotuine do more jobs. However, it also makes other goroutines starve. So, the balance should be found between `coarse-grained synchronization for performance` and ` fine-grained synchronization for fairness`.
 
+## Concurrency vs Parallelism
+Concurrency is the property of the `code`, but `parallelism` is the property of runtime.
+We write code that can be run in parallel, but it is the runtime that decides if it is gonna run in parallel or not.
+If our concurrent code is running on a single core CPU then the concurrent parts will use the CPU in turn within the amount of time they are given.
+Since this is indistinguishable to us, we would think that it is running in parallel.
+
+Before GO, most programming languages were handling the concurrency abstraction at the OS thread level.
+This forces us to model our program's concurrency around the OS threads and synchronize the access to the shared memory between them.
+If the machine the program is running on does not support that many threads then you have to create a thread pool and multiplex your operations on to the thread pool.
+You might 
+
 
 
 
